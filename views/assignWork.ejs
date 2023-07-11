@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="/assets/styles.css">
+
+<div class="topright-container">
+  <a href="/welcome" class="home-button"><button>Home</button></a>
+  <a href="/logout" class="logout-button"><button>Logout</button></a>
+</div>
+
+<h1>Assign Work</h1>
+
+<form action="/assignWork" method="POST">
+  <label for="assignedTo">Assigned To:</label>
+  <select name="assignedTo" id="assignedTo" required>
+    <% users.forEach((user)=> { %>
+      <option value="<%= user._id %>">
+        <%= user.name %>
+      </option>
+      <% }); %>
+  </select>
+
+  <label for="assignedFor">Assigned For:</label>
+  <select name="assignedFor" id="assignedFor" required>
+    <% users.forEach((user)=> { %>
+      <option value="<%= user._id %>">
+        <%= user.name %>
+      </option>
+      <% }); %>
+  </select>
+
+  <input type="submit" value="Assign">
+</form>

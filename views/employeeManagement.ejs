@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="/assets/styles.css">
+
+<div class="topright-container">
+  <a href="/welcome" class="home-button"><button>Home</button></a>
+  <a href="/logout" class="logout-button"><button>Logout</button></a>
+</div>
+
+<h1>Employee Management</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>User Type</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach((user)=> { %>
+      <tr>
+        <td>
+          <form action="/updateUser" method="POST">
+            <input type="hidden" name="userId" value="<%= user._id %>">
+            <input type="text" name="name" value="<%= user.name %>" required>
+        </td>
+        <td>
+          <input type="email" name="email" value="<%= user.email %>" required>
+        </td>
+        <td>
+          <select name="userType" required>
+            <option value="user" <%=user.userType==='user' ? 'selected' : '' %>>User</option>
+            <option value="admin" <%=user.userType==='admin' ? 'selected' : '' %>>Admin</option>
+          </select>
+        </td>
+        <td>
+          <input type="submit" value="Update">
+          </form>
+
+          <br>
+          <p></p>
+          <form action="/deleteUser" method="POST">
+            <input type="hidden" name="userId" value="<%= user._id %>">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+      <% }); %>
+  </tbody>
+</table>
+
+<h2>Add New User</h2>
+<form action="/addUser" method="POST">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="password" name="password" placeholder="Password" required>
+  <select name="userType" required>
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select>
+  <input type="submit" value="Add User">
+</form>

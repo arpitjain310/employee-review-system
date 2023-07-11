@@ -1,0 +1,63 @@
+<link rel="stylesheet" type="text/css" href="/assets/styles.css">
+
+<div class="top-container">
+   <a href="/logout" class="logout-button"><button>Logout</button></a>
+</div>
+
+<h1>Welcome, <%= user.name %>!</h1>
+
+<div class="admin-options">
+  <% if (user.userType === 'admin') { %>
+    <p>
+      <a href="/assignWork"><button> WorkAssign</button></a> 
+      <a href="/employeeManagement"><button>Employee Management</button></a>
+    </p>
+  <% } %>
+  </div>
+  
+  <div class="review-container">
+    <div id="assigned-review-section">
+<h2>Assigned Reviews:</h2>
+<% if (assignedReviews.length === 0) { %>
+  <p>No assigned reviews.</p>
+<% } else { %>
+  <ul>
+    <% assignedReviews.forEach((review) => { %>
+      <li>
+        <strong>Assigned To:</strong> <%= review.assignedTo.name %><br>
+        <strong>Assigned For:</strong> <%= review.assignedFor.name %><br>
+        <strong>Comment:</strong> <%= review.comment %><br>
+        <strong>State:</strong> <%= review.state %><br>
+        <% if (review.state === 'open') { %>
+          <form action="/submitReview" method="POST">
+            <input type="hidden" name="reviewId" value="<%= review._id %>">
+            <input type="text" name="comment" placeholder="Enter comment" required>
+            <input type="submit" value="Submit">
+          </form>
+        <% } %>
+        <br>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+</div>
+<div id="my-review-section">
+
+<h2>My Reviews:</h2>
+<% if (myReviews.length === 0) { %>
+  <p>No reviews found.</p>
+<% } else { %>
+  <ul>
+    <% myReviews.forEach((review) => { %>
+      <li>
+        <strong>Assigned To:</strong> <%= review.assignedTo.name %><br>
+        <strong>Assigned For:</strong> <%= review.assignedFor.name %><br>
+        <strong>Comment:</strong> <%= review.comment %><br>
+        <strong>State:</strong> <%= review.state %><br><br>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+</div>
+</div>
+

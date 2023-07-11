@@ -1,0 +1,189 @@
+/* assets/styles.css */
+
+/* Global Styles */
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header{
+  align-items: flex-start;
+}
+h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 7%;
+}
+
+h2 {
+  color: #666;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.topright-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.topright-container a {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.home-button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"],
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;  
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Home Page */
+#login-form {
+  width: 300px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+/* Signup Page */
+#signup-form {
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+/* Welcome Page */
+#welcome-message {
+  margin: 100px auto;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+/* Admin Dashboard */
+#admin-dashboard {
+  margin: 50px auto;
+  text-align: center;
+}
+
+#assigned-reviews,
+#my-reviews {
+  margin-block: 20%;
+  
+}
+
+.review-container{
+  display: flex;
+}
+
+.review-card {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.review-card .title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.review-card .comment {
+  color: #666;
+  font-style: italic;
+}
+
+/* Assign Work Page */
+#assign-work-form {
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+/* Employee Management Page */
+#employee-management {
+  margin: 50px auto;
+  text-align: center;
+}
+
+#admin-options{
+  align-items: left;
+}
+
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  padding: 10%;
+  margin: 10%;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+td input[type="text"],
+td input[type="email"],
+td select {
+  width: 100%;
+  padding: 5px;
+}
+
+td input[type="submit"],
+td button {
+  padding: 5px 10px;
+  background-color: #7a77a6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+
